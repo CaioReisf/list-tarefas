@@ -1,0 +1,131 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Efeito vidro no container */
+#todo {
+    background: rgba(13, 27, 42, 0.35);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Área do input */
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+#intaf {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 12px;
+    border-radius: 999px;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#intaf:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+#btnad {
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+    background-size: 200% 200%;
+    animation: gradiente 4s ease infinite;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#btnad:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+@keyframes gradiente {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Lista de tarefas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+li.feito {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Botões de ação */
+.action-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.action-btns button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.action-btns button:hover {
+    transform: scale(1.2);
+}
